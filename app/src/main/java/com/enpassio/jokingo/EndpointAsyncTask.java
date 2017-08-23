@@ -2,7 +2,6 @@ package com.enpassio.jokingo;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Pair;
 
 import com.enpassio.jokingo.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -17,13 +16,13 @@ import java.io.IOException;
  * link: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints
  */
 
-public class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+public class EndpointAsyncTask extends AsyncTask<EndpointAsyncTask.OnEventListener, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
     private OnEventListener onEventListener;
 
     @Override
-    protected String doInBackground(Pair<Context, String>... params) {
+    protected String doInBackground(OnEventListener... params) {
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -41,12 +40,9 @@ public class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
 
             myApiService = builder.build();
         }
-
-        context = params[0].first;
-        String name = params[0].second;
-
+        onEventListener = params[0];
         try {
-            return myApiService.sayAJoke(name).execute().getData();
+            return myApiService.sayAJoke("").execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -55,7 +51,7 @@ public class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
     @Override
     protected void onPostExecute(String result) {
         //referenced from: https://stackoverflow.com/a/16327968/5770629
-        onEventListener = (OnEventListener) context;
+
         onEventListener.onEvent(result);
     }
 

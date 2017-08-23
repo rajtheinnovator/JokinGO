@@ -30,18 +30,24 @@ public class FetchRESTResponseTaskTests {
         context = InstrumentationRegistry.getContext();
 
         onView(withId(R.id.ok)).perform(click());
-        EndpointAsyncTask jokeTask = new EndpointAsyncTask();
+        final EndpointAsyncTask jokeTask = new EndpointAsyncTask();
 
-        /* code below referenced from the
+        EndpointAsyncTask.OnEventListener onEventListener = new EndpointAsyncTask.OnEventListener() {
+            @Override
+            public void onEvent(String joke) {
+                        /* code below referenced from the
          * link: https://discussions.udacity.com/t/writing-tests-for-async-task/25482/10
          */
-        try {
-            jokeTask.execute();
-            mJoke = jokeTask.get(30, TimeUnit.SECONDS);
-            assertTrue("The string is empty", mJoke.length() > 0);
-        } catch (Exception e) {
-            //exception can be caught here
-        }
+                try {
+
+                    mJoke = jokeTask.get(30, TimeUnit.SECONDS);
+                    assertTrue("The string is empty", mJoke.length() > 0);
+                } catch (Exception e) {
+                    //exception can be caught here
+                }
+            }
+        };
+
 
     }
 

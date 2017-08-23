@@ -10,10 +10,11 @@ public class JokeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joke);
-        Bundle bundle = savedInstanceState.getBundle("jokeBundle");
+        Bundle bundle = getIntent().getBundleExtra("jokeBundle");
         String joke = bundle.getString("jokeString");
         TextView jokeTextView = (TextView) findViewById(R.id.joke_display_textview);
         jokeTextView.setText(joke);
+
 
     }
 }

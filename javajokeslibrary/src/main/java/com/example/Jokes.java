@@ -18,7 +18,7 @@ public class Jokes {
                 "None – It’s a hardware problem");
         jokesArrayList.add("Why do programmers always mix up Halloween and Christmas\n" +
                 "Because Oct 31 equals Dec 25.");
-        jokesArrayList.add("There are only 10 kinds of people in this world: those who know binary and those who don’t.");
+        jokesArrayList.add("There are only 10 kinds of people in this world those who know binary and those who dont.");
         jokesArrayList.add("A programmer walks to the butcher shop and buys a kilo of meat.  An hour later he comes back upset that the butcher shortchanged him by 24 grams.");
 
         //more jokes can be added from the link: http://www.devtopics.com/best-programming-jokes/

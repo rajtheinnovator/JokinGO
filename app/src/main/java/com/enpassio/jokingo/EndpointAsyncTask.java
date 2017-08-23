@@ -14,7 +14,8 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import java.io.IOException;
 
 /**
- * Created by ABHISHEK RAJ on 8/23/2017.
+ * code below referenced from the
+ * link: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints
  */
 
 public class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {

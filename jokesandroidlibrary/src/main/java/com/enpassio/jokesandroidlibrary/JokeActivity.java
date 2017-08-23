@@ -4,10 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-/**
- * Created by ABHISHEK RAJ on 8/23/2017.
- */
-
 public class JokeActivity extends AppCompatActivity {
 
     @Override

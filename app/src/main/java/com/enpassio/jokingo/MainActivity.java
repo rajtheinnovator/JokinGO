@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void ok(View view){
+
+    public void ok(View view) {
         new EndpointAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
     }
 }

@@ -3,7 +3,6 @@ package com.enpassio.jokingo;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Pair;
-import android.widget.Toast;
 
 import com.enpassio.jokingo.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -55,12 +54,12 @@ public class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        //referenced from: https://stackoverflow.com/a/16327968/5770629
         onEventListener = (OnEventListener) context;
         onEventListener.onEvent(result);
     }
 
-    //referenced from: https://stackoverflow.com/a/16327968/5770629
+
     public interface OnEventListener {
         void onEvent(String joke);
         // or void onEvent(); as per your need

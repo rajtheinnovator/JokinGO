@@ -42,7 +42,7 @@ public class EndpointAsyncTask extends AsyncTask<EndpointAsyncTask.OnEventListen
         }
         onEventListener = params[0];
         try {
-            return myApiService.sayAJoke("").execute().getData();
+            return myApiService.sayAJoke("name").execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }

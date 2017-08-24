@@ -19,12 +19,12 @@ android {
         }
     }
     productFlavors {
-        free {
-            applicationId 'com.enpassio.jokingo.free'
+        freemium {
+            applicationId 'com.enpassio.jokingo.freemium'
 
         }
-        paid {
-            applicationId 'com.enpassio.jokingo.paid'
+        premium {
+            applicationId 'com.enpassio.jokingo.premium'
         }
     }
 }
@@ -58,6 +58,7 @@ dependencies {
     compile project(path: ':backend', configuration: 'android-endpoints')
 
     //dependency below referenced from: https://developers.google.com/android/guides/releases
-    freeCompile 'com.google.android.gms:play-services-ads:11.0.2'
+    //also theis link was helpful: https://stackoverflow.com/a/18213259/5770629
+    freemiumCompile 'com.google.android.gms:play-services-ads:11.0.2'
 
 }

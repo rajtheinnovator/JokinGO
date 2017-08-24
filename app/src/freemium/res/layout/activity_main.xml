@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.enpassio.jokingo.MainActivity">
+    tools:context="com.enpassio.jokingo.freemium.MainActivity">
 
     <TextView
         android:id="@+id/welcome_message"
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="Hello World!" />
+
     <Button
         android:id="@+id/ok"
         android:layout_width="wrap_content"
@@ -20,5 +21,15 @@
         android:layout_centerInParent="true"
         android:onClick="ok"
         android:text="OK" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-6697507015098409/8796911875" />
 
 </RelativeLayout>

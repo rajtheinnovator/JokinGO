@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context="com.enpassio.jokingo.freemium.MainActivity">
 
     <TextView
@@ -11,7 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Hello World!" />
+        android:gravity="center_horizontal"
+        android:padding="8dp"
+        android:text="@string/welcome_message"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/ok"

@@ -18,10 +18,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        free {
+            applicationId 'com.enpassio.jokingo.free'
+
+        }
+        paid {
+            applicationId 'com.enpassio.jokingo.paid'
+        }
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     //referenced from the link:
     // https://guides.codepath.com/android/UI-Testing-with-Espresso#interacting-with-a-recyclerview
     androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2') {
@@ -35,13 +44,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.android.support', module: 'support-v4'
     })
-
     androidTestCompile 'com.android.support:support-annotations:26+'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
     // Optional -- Hamcrest library
     androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
-
     compile project(':javajokeslibrary')
     compile project(':jokesandroidlibrary')
     compile 'com.android.support:appcompat-v7:26.+'
@@ -49,4 +56,8 @@ dependencies {
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     testCompile 'junit:junit:4.12'
     compile project(path: ':backend', configuration: 'android-endpoints')
+
+    //dependency below referenced from: https://developers.google.com/android/guides/releases
+    freeCompile 'com.google.android.gms:play-services-ads:11.0.4'
+
 }

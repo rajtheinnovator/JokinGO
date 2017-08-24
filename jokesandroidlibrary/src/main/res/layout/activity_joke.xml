@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context="com.enpassio.jokesandroidlibrary.JokeActivity">
 
     <TextView
         android:id="@+id/joke_display_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal|center_vertical" />
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_centerInParent="true"
+        android:textColor="#000000"
+        android:padding="8dp"/>
 
-</LinearLayout>
+</RelativeLayout>
